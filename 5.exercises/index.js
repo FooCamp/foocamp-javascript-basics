@@ -9,13 +9,13 @@ function dataTypesTest() {
 
     if (!result) {
       console.warn('Did you forget to return a value?');
-    } else if (!result?.sum) {
+    } else if (!result.sum) {
       console.warn('did you forget to define the `sum` property?');
-    } else if (!result?.concat) {
+    } else if (!result.concat) {
       console.warn('did you forget to define the `concat` property?');
-    } else if (sum !== correctNumber) {
+    } else if (result.sum !== correctNumber) {
       console.warn('the number value is wrong!');
-    } else if (concat !== correctString) {
+    } else if (result.concat !== correctString) {
       console.warn('the string value is wrong');
     } else {
       passTests++;
@@ -118,6 +118,9 @@ function loopsTest() {
   const dataTypesLabel = document.querySelector('#loops');
   dataTypesLabel.innerHTML = `${passTests}/6 passed`;
 }
+
+dataTypesTest();
+
 
 function main() {
   dataTypesTest();
